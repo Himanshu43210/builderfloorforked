@@ -4,6 +4,7 @@ import CheckIcon from "@mui/icons-material/Check";
 import CloseIcon from "@mui/icons-material/Close";
 import { styled } from "@mui/material/styles";
 import { autocompleteClasses } from "@mui/material/Autocomplete";
+import NoSsr from "@mui/core/NoSsr"; // Importing NoSsr
 
 const Root = styled("div")(
   ({ theme }) => `
@@ -241,14 +242,20 @@ export default function CustomizedHook() {
           onClick={handleFocus}
         >
           {value.map((option, index) => (
-            <StyledTag label={option.title} {...getTagProps({ index })} />
+            <StyledTag
+              key={index}
+              label={option.title}
+              {...getTagProps({ index })}
+            /> // Added key prop
           ))}
           <input {...getInputProps()} onBlur={handleClose} />
         </InputWrapper>
         {groupedOptions.length > 0 ? (
           <Listbox {...getListboxProps()}>
             {groupedOptions.map((option, index) => (
-              <li {...getOptionProps({ option, index })}>
+              <li key={index} {...getOptionProps({ option, index })}>
+                {" "}
+                // Added key prop
                 <span>{option.title}</span>
                 <CheckIcon fontSize="small" />
               </li>
@@ -259,7 +266,6 @@ export default function CustomizedHook() {
     </Root>
   );
 }
-
 // Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
 const top100Films = [
   { title: "The Shawshank Redemption", year: 1994 },
