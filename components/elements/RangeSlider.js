@@ -1,8 +1,5 @@
 import * as React from "react";
-import { styled, alpha, Box } from "@mui/system";
-import SliderUnstyled, {
-  sliderUnstyledClasses,
-} from "@mui/material/SliderUnstyled";
+import { styled, alpha, Box, Slider } from "@mui/material";
 
 const blue = {
   100: "#DAECFF",
@@ -27,102 +24,7 @@ const grey = {
   900: "#24292f",
 };
 
-// const StyledSlider = styled(SliderUnstyled)(
-//   ({ theme }) => `
-//   color: ${theme.palette.mode === "light" ? blue[500] : blue[300]};
-//   height: 6px;
-//   width: 84%;
-//   padding: 16px 0;
-//   display: inline-block;
-//   position: relative;
-//   cursor: pointer;
-//   touch-action: none;
-//   -webkit-tap-highlight-color: transparent;
-//   &:hover { 
-//     opacity: 1;
-//   }
-
-//   &.${sliderUnstyledClasses.disabled} { 
-//     pointer-events: none;
-//     cursor: default;
-//     color: ${theme.palette.mode === "light" ? grey[300] : grey[600]};
-//     opacity: 0.5;
-//   }
-
-//   & .${sliderUnstyledClasses.rail} {
-//     display: block;
-//     position: absolute;
-//     width: 100%;
-//     height: 8px;
-//     border-radius: 2px;
-//     background-color: currentColor;
-//     opacity: 0.4;
-//   }
-
-//   & .${sliderUnstyledClasses.track} {
-//     display: block;
-//     position: absolute;
-//     height: 8px;
-//     border-radius: 2px;
-//     background-color: currentColor;
-//   }
-
-//   & .${sliderUnstyledClasses.thumb} {
-//     position: absolute;
-//     width: 24px;
-//     height: 24px;
-//     margin-left: -8px;
-//     margin-top: -8px;
-//     box-sizing: border-box;
-//     border-radius: 50%;
-//     outline: 0;
-//     border: 3px solid currentColor;
-//     background-color: #fff;
-
-//     :hover,
-//     &.${sliderUnstyledClasses.focusVisible} {
-//       box-shadow: 0 0 0 0.25rem ${alpha(
-//         theme.palette.mode === "light" ? blue[400] : blue[300],
-//         0.15
-//       )};
-//     }
-
-//     &.${sliderUnstyledClasses.active} {
-//       box-shadow: 0 0 0 0.25rem ${alpha(
-//         theme.palette.mode === "light" ? blue[200] : blue[300],
-//         0.3
-//       )};
-//     }
-//   }
-
-//   & .${sliderUnstyledClasses.mark} {
-//     position: absolute;
-//     width: 4px;
-//     height: 4px;
-//     border-radius: 2px;
-//     background-color: currentColor;
-//     top: 50%;
-//     opacity: 0.7;
-//     transform: translateX(-50%);
-//   }
-
-//   & .${sliderUnstyledClasses.markActive} {
-//     background-color: #fff;
-//   }
-
-//   & .${sliderUnstyledClasses.valueLabel} {
-//     font-family: IBM Plex Sans;
-//     font-size: 14px;
-//     display: block;
-//     position: relative;
-//     top: -1.6em;
-//     text-align: center;
-//     transform: translateX(-50%);
-//   }
-// `
-// );
-
-const StyledSlider = styled(SliderUnstyled)(
+const StyledSlider = styled(Slider)(
   ({ theme }) => `
   color: ${theme.palette.mode === "light" ? blue[500] : blue[300]};
   height: 6px;
@@ -137,14 +39,14 @@ const StyledSlider = styled(SliderUnstyled)(
     opacity: 1;
   }
 
-  &.${sliderUnstyledClasses.disabled} { 
+  &.Mui-disabled { 
     pointer-events: none;
     cursor: default;
     color: ${theme.palette.mode === "light" ? grey[300] : grey[600]};
     opacity: 0.5;
   }
 
-  & .${sliderUnstyledClasses.rail} {
+  & .MuiSlider-rail {
     display: block;
     position: absolute;
     width: 100%;
@@ -154,7 +56,7 @@ const StyledSlider = styled(SliderUnstyled)(
     opacity: 0.4;
   }
 
-  & .${sliderUnstyledClasses.track} {
+  & .MuiSlider-track {
     display: block;
     position: absolute;
     height: 8px;
@@ -162,7 +64,7 @@ const StyledSlider = styled(SliderUnstyled)(
     background-color: currentColor;
   }
 
-  & .${sliderUnstyledClasses.thumb} {
+  & .MuiSlider-thumb {
     position: absolute;
     width: 24px;
     height: 24px;
@@ -175,22 +77,22 @@ const StyledSlider = styled(SliderUnstyled)(
     background-color: #fff;
 
     :hover,
-    &.${sliderUnstyledClasses.focusVisible} {
+    &.Mui-focusVisible {
       box-shadow: 0 0 0 0.25rem ${alpha(
-    theme.palette.mode === "light" ? blue[400] : blue[300],
-    0.15
-  )};
+        theme.palette.mode === "light" ? blue[400] : blue[300],
+        0.15
+      )};
     }
 
-    &.${sliderUnstyledClasses.active} {
+    &.Mui-active {
       box-shadow: 0 0 0 0.25rem ${alpha(
-    theme.palette.mode === "light" ? blue[200] : blue[300],
-    0.3
-  )};
+        theme.palette.mode === "light" ? blue[200] : blue[300],
+        0.3
+      )};
     }
   }
 
-  & .${sliderUnstyledClasses.mark} {
+  & .MuiSlider-mark {
     position: absolute;
     width: 4px;
     height: 4px;
@@ -201,11 +103,11 @@ const StyledSlider = styled(SliderUnstyled)(
     transform: translateX(-50%);
   }
 
-  & .${sliderUnstyledClasses.markActive} {
+  & .MuiSlider-markActive {
     background-color: #fff;
   }
 
-  & .${sliderUnstyledClasses.valueLabel} {
+  & .MuiSlider-valueLabel {
     font-family: IBM Plex Sans;
     font-size: 14px;
     display: block;
@@ -214,13 +116,7 @@ const StyledSlider = styled(SliderUnstyled)(
     text-align: center;
     transform: translateX(-50%);
   }
-
-  @media (max-width: 480px) {
-    
-  }
-
 `
-
 );
 
 function valuetext(value) {
@@ -232,7 +128,6 @@ export default function RangeSlider({ min, max, value, onChange, step }) {
     <Box sx={{
       width: 300
     }}>
-      {/* controlled: */}
       <StyledSlider
         step={step}
         value={value}
