@@ -2,7 +2,7 @@ import * as React from "react";
 import { styled, alpha, Box } from "@mui/system";
 import SliderUnstyled, {
   sliderUnstyledClasses,
-} from "@mui/base/SliderUnstyled";
+} from "@mui/material/SliderUnstyled";
 
 const blue = {
   100: "#DAECFF",
