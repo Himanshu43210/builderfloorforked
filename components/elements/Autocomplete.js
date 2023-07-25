@@ -1,10 +1,10 @@
 import * as React from "react";
 import PropTypes from "prop-types";
+import { useAutocomplete } from "@mui/base/AutocompleteUnstyled";
 import CheckIcon from "@mui/icons-material/Check";
 import CloseIcon from "@mui/icons-material/Close";
 import { styled } from "@mui/material/styles";
 import { autocompleteClasses } from "@mui/material/Autocomplete";
-import NoSsr from "@mui/core/NoSsr"; // Importing NoSsr
 
 const Root = styled("div")(
   ({ theme }) => `
@@ -143,64 +143,20 @@ const Listbox = styled("ul")(
     font-weight: 600;
 
     & svg {
-      color: currentColor;
+      color: #1890ff;
     }
   }
 
-  & li[data-focus='true'] {
-    background-color: ${theme.palette.mode === "dark" ? "#1a1a1a" : "#f5f5f5"};
+  & li.${autocompleteClasses.focused} {
+    background-color: ${theme.palette.mode === "dark" ? "#003b57" : "#e6f7ff"};
     cursor: pointer;
 
     & svg {
-      color: ${theme.palette.mode === "dark" ? "#177ddc" : "#40a9ff"};
+      color: currentColor;
     }
   }
 `
 );
-
-function useAutocomplete(props) {
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const [value, setValue] = React.useState(props.defaultValue || []);
-  const [inputValue, setInputValue] = React.useState("");
-  const [focused, setFocused] = React.useState(false);
-
-  const options = top100Films.filter((film) =>
-    film.title.toLowerCase().includes(inputValue.toLowerCase())
-  );
-
-  const onInputChange = (event) => {
-    setInputValue(event.target.value);
-  };
-
-  const onOptionSelect = (option) => {
-    setValue([...value, option]);
-    setInputValue("");
-  };
-
-  return {
-    getRootProps: () => ({}),
-    getInputLabelProps: () => ({}),
-    getInputProps: () => ({
-      value: inputValue,
-      onChange: onInputChange,
-    }),
-    getTagProps: ({ index }) => ({
-      onDelete: () => {
-        const newValue = [...value];
-        newValue.splice(index, 1);
-        setValue(newValue);
-      },
-    }),
-    getListboxProps: () => ({}),
-    getOptionProps: ({ option }) => ({
-      onClick: () => onOptionSelect(option),
-    }),
-    groupedOptions: options,
-    value,
-    focused,
-    setAnchorEl,
-  };
-}
 
 export default function CustomizedHook() {
   const {
@@ -222,50 +178,35 @@ export default function CustomizedHook() {
     getOptionLabel: (option) => option.title,
   });
 
-  const handleFocus = (event) => {
-    setAnchorEl(event.currentTarget);
-    setFocused(true);
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-    setFocused(false);
-  };
-
   return (
-    <Root {...getRootProps()}>
-      <NoSsr>
-        <Label {...getInputLabelProps()}>Customized hook</Label>
-        <InputWrapper
-          ref={setAnchorEl}
-          className={focused ? "focused" : ""}
-          onClick={handleFocus}
-        >
+    <Root>
+      <div {...getRootProps()}>
+        <InputWrapper ref={setAnchorEl} className={focused ? "focused" : ""}>
           {value.map((option, index) => (
             <StyledTag
-              key={index}
+              key={option.title}
               label={option.title}
               {...getTagProps({ index })}
-            /> // Added key prop
+            />
           ))}
-          <input {...getInputProps()} onBlur={handleClose} />
+
+          <input {...getInputProps()} />
         </InputWrapper>
-        {groupedOptions.length > 0 ? (
-          <Listbox {...getListboxProps()}>
-            {groupedOptions.map((option, index) => (
-              <li key={index} {...getOptionProps({ option, index })}>
-                {" "}
-                // Added key prop
-                <span>{option.title}</span>
-                <CheckIcon fontSize="small" />
-              </li>
-            ))}
-          </Listbox>
-        ) : null}
-      </NoSsr>
+      </div>
+      {groupedOptions.length > 0 ? (
+        <Listbox {...getListboxProps()}>
+          {groupedOptions.map((option, index) => (
+            <li key={index} {...getOptionProps({ option, index })}>
+              <span>{option.title}</span>
+              <CheckIcon fontSize="small" />
+            </li>
+          ))}
+        </Listbox>
+      ) : null}
     </Root>
   );
 }
+
 // Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
 const top100Films = [
   { title: "The Shawshank Redemption", year: 1994 },
