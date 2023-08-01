@@ -249,8 +249,3 @@ a {
   /* Rounded corners */
   border-radius: 8px;
 }
-
-.text-body-lead {
-  background-color: yellow;
-  text-decoration: underline !important;
-}
