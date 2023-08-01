@@ -250,7 +250,7 @@ a {
   border-radius: 8px;
 }
 
-.text-body-lead :hover {
+.text-body-lead {
   background-color: yellow;
   text-decoration: underline !important;
 }
