@@ -1059,7 +1059,7 @@ const SingleVendor = ({ property }) => {
                                       className="text-body-lead color-gray-700  text-center"
                                       style={{ lineHeight: "25px" }}
                                     >
-                                      defg{property?.title}
+                                      {property?.title}
                                     </h3>
                                   </a>
                                 </Link>

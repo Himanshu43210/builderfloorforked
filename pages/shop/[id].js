@@ -1059,7 +1059,7 @@ const SingleVendor = ({ property }) => {
                                       className="text-body-lead color-gray-700  text-center"
                                       style={{ lineHeight: "25px" }}
                                     >
-                                     ffgghh {property?.title}
+                                      {property?.title}
                                     </h3>
                                   </a>
                                 </Link>
@@ -1360,7 +1360,7 @@ export async function getServerSideProps({ query }) {
   //     apiKey: "083d2bc2-fd14-4a5e-a440-614232b4873e",
   //   }
   // );
-    console.log(query,"please checck here")
+  console.log(query, "please checck here");
   const response = await axios.post(
     // "https://p24x7-server.herokuapp.com/api/p24x7",
     "https://testerp1apis.nextsolutions.in/api/p24x7",

@@ -686,10 +686,10 @@ function Index8() {
                               >
                                 <a>
                                   <h3
-                                    className="text-body-lead color-gray-700  text-center"
+                                    className=" underline-on-hover hover:underline text-body-lead color-gray-700  text-center"
                                     style={{ lineHeight: "25px" }}
                                   >
-                                    xyz{property?.title}
+                                    {property?.title}
                                   </h3>
                                 </a>
                               </Link>
