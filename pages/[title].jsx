@@ -1087,10 +1087,10 @@ const SingleVendor = ({ property }) => {
                                   <Link href={hreff}>
                                     <a>
                                       <h3
-                                        className=" hover:underline text-body-lead color-gray-700  text-center"
+                                        className=" text-body-lead color-gray-700  text-center"
                                         style={{ lineHeight: "25px" }}
                                       >
-                                        ffgh {property?.title}
+                                        {property?.title}
                                       </h3>
                                     </a>
                                   </Link>
