@@ -621,9 +621,12 @@ function Index8() {
               <div className="flex flex-wrap justify-center w-[100%] w-full px-[0px] md:gap-x-4">
                 {check &&
                   newProperties.slice(0, 12).map((property, index) => {
-                    const prooppertyTitle = property.detailTitle.replace(/\s+/g, "-");
-                    const hreff = "/" + prooppertyTitle + "-" +property._id;
-                    console.log(prooppertyTitle,hreff);
+                    const prooppertyTitle = property.detailTitle.replace(
+                      /\s+/g,
+                      "-"
+                    );
+                    const hreff = "/" + prooppertyTitle + "-" + property._id;
+                    console.log(prooppertyTitle, hreff);
                     return (
                       <div
                         key={index}
@@ -686,7 +689,7 @@ function Index8() {
                                     className="text-body-lead color-gray-700  text-center"
                                     style={{ lineHeight: "25px" }}
                                   >
-                                    {property?.title}
+                                    xyz{property?.title}
                                   </h3>
                                 </a>
                               </Link>
