@@ -1037,7 +1037,7 @@ const SingleVendor = ({ property }) => {
                       );
                       const hreff = "/" + prooppertyTitle + "-" + property._id;
                       return (
-                        <SwiperSlide className=" home-card-design " key={index}>
+                        <SwiperSlide key={index}>
                           <div
                             className=" swiper-item h-[400px] md:mt-[70px] mx-auto  lg:shrink-0 xl:shrink-0 2xl:shrink-0  w-[280px]  hover:scale-[1.05] cursor-pointer flex items-center justify-center relative bg-white rounded-[4px] mt-[50px]"
                             style={{
@@ -1082,12 +1082,12 @@ const SingleVendor = ({ property }) => {
                                     </a>
                                   </div>
                                 </Link>
-                                <div className=" home-card-title product-info px-2 pt-[10px] w-100">
+                                <div className=" product-info px-2 pt-[10px] w-100">
                                   {/* <Link href={`/shop/${property?._id}`}> */}
                                   <Link href={hreff}>
                                     <a>
                                       <h3
-                                        className=" home-card-title text-body-lead color-gray-700  text-center"
+                                        className="hover:underline text-body-lead color-gray-700  text-center"
                                         style={{ lineHeight: "25px" }}
                                       >
                                         {property?.title}
