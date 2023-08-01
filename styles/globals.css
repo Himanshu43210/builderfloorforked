@@ -250,14 +250,7 @@ a {
   border-radius: 8px;
 }
 
-.home-card-design {
-  cursor: pointer;
-}
-
-.home-card-title {
-  text-decoration: none;
-}
-
-.home-card-title :hover {
+.text-body-lead :hover {
+  background-color: yellow;
   text-decoration: underline !important;
 }
