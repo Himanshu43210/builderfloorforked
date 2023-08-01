@@ -1037,9 +1037,9 @@ const SingleVendor = ({ property }) => {
                       );
                       const hreff = "/" + prooppertyTitle + "-" + property._id;
                       return (
-                        <SwiperSlide key={index}>
+                        <SwiperSlide className=" home-card-design " key={index}>
                           <div
-                            className=" home-card-design swiper-item h-[400px] md:mt-[70px] mx-auto  lg:shrink-0 xl:shrink-0 2xl:shrink-0  w-[280px]  hover:scale-[1.05] cursor-pointer flex items-center justify-center relative bg-white rounded-[4px] mt-[50px]"
+                            className=" swiper-item h-[400px] md:mt-[70px] mx-auto  lg:shrink-0 xl:shrink-0 2xl:shrink-0  w-[280px]  hover:scale-[1.05] cursor-pointer flex items-center justify-center relative bg-white rounded-[4px] mt-[50px]"
                             style={{
                               border: "1px solid #cacaca",
                             }}
