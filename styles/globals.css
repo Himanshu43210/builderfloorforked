@@ -9,11 +9,12 @@
   font-family: "Space Grotesk", sans-serif;
 }
 
-.svg-white{
-  filter: invert(96%) sepia(96%) saturate(0%) hue-rotate(107deg) brightness(105%) contrast(104%) !important;
+.svg-white {
+  filter: invert(96%) sepia(96%) saturate(0%) hue-rotate(107deg)
+    brightness(105%) contrast(104%) !important;
 }
 
-.scroll-hidden::-webkit-scrollbar{
+.scroll-hidden::-webkit-scrollbar {
   display: none;
 }
 
@@ -68,12 +69,10 @@ a {
 }
 
 .css-pcd4p5 .MuiSlider-rail {
-  height:4px !important;
-
+  height: 4px !important;
 }
 
 .css-pcd4p5 .MuiSlider-thumb {
-
   width: 8px !important;
   height: 8px !important;
   margin-left: -8px !important;
@@ -82,18 +81,18 @@ a {
 }
 
 .css-pcd4p5 .MuiSlider-track {
-  height:4px !important;
+  height: 4px !important;
 }
-.xyz{
+.xyz {
   background-color: white !important;
   display: none;
 }
-.xyz:active{
-  background-color:#006D77 !important;
+.xyz:active {
+  background-color: #006d77 !important;
 }
-.abc{
-    background-color: #006D77 !important;
-    display: none !important;
+.abc {
+  background-color: #006d77 !important;
+  display: none !important;
 }
 .trial {
   /* Font size */
@@ -135,7 +134,7 @@ a {
   }
 
   /* Border */
-  border: 1px solid #CDCDCD;
+  border: 1px solid #cdcdcd;
 
   /* Medium screens vertical margin */
   @media (min-width: 768px) {
@@ -167,16 +166,14 @@ a {
 }
 
 .trial:active {
-  background-color: #006D77 !important;
+  background-color: #006d77 !important;
 }
 
-.bgcolor{
-  background-color: #006D77 !important;
-
+.bgcolor {
+  background-color: #006d77 !important;
 }
-.txtcolor{
+.txtcolor {
   color: #fff;
-
 }
 
 .trialcorner {
@@ -219,7 +216,7 @@ a {
   }
 
   /* Border */
-  border: 1px solid #CDCDCD;
+  border: 1px solid #cdcdcd;
 
   /* Medium screens vertical margin */
   @media (min-width: 768px) {
@@ -251,4 +248,16 @@ a {
 
   /* Rounded corners */
   border-radius: 8px;
+}
+
+.home-card-design {
+  cursor: pointer;
+}
+
+.home-card-title {
+  text-decoration: none;
+}
+
+.home-card-title :hover {
+  text-decoration: underline !important;
 }

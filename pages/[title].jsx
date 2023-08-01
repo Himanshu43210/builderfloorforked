@@ -45,7 +45,7 @@ const SingleVendor = ({ property }) => {
   const [three60, set360] = useState();
   console.log(property);
   const propertyObj = property.find((obj) => obj._id === property_id);
-  useEffect(() => { }, [propertyObj]);
+  useEffect(() => {}, [propertyObj]);
   const description = propertyObj?.description;
   const descriptionLines = description?.split("\n");
   const swiperRef = useRef(null);
@@ -272,7 +272,9 @@ const SingleVendor = ({ property }) => {
                     title: "WebShare",
                     url: window.location.href,
                   });
-                }} className="w-10 h-10 sm1:w-8 sm1:h-8  rounded-full  border-1 border-solid border-[#000]  flex items-center justify-center ">
+                }}
+                className="w-10 h-10 sm1:w-8 sm1:h-8  rounded-full  border-1 border-solid border-[#000]  flex items-center justify-center "
+              >
                 <img
                   src="/assets/imgs/icons/share.png"
                   alt="share"
@@ -292,7 +294,7 @@ const SingleVendor = ({ property }) => {
           </div>
         </div>
         {(propertyObj?.images && propertyObj?.images?.length !== 0) ||
-          (propertyObj?.normalImages && propertyObj?.normal?.length !== 0) ? (
+        (propertyObj?.normalImages && propertyObj?.normal?.length !== 0) ? (
           <div className="relative mt-[-29px]">
             <Slider
               view360={{ status: true, view: three60, set360: set360 }}
@@ -303,22 +305,22 @@ const SingleVendor = ({ property }) => {
             <button className="absolute z-10 bottom-[-40px] left-[35%] px-2 py-2 bg-[#f5f5f5] border-solid border-1 border-black text-[#066972] ">
               {mediaObject?.length > 0
                 ? mediaObject
-                  .map((obj, idx) =>
-                    obj.value > 0 ? (
-                      obj.name === "360 DEGREE" ? (
-                        <span key={idx}>({obj.value}) Panorama</span>
-                      ) : (
-                        <span key={idx}>
-                          ({obj.value}) {obj.name}
-                        </span>
-                      )
-                    ) : null
-                  )
-                  .filter(Boolean)
-                  .reduce(
-                    (acc, curr) => (acc === "" ? [curr] : [acc, " | ", curr]),
-                    ""
-                  )
+                    .map((obj, idx) =>
+                      obj.value > 0 ? (
+                        obj.name === "360 DEGREE" ? (
+                          <span key={idx}>({obj.value}) Panorama</span>
+                        ) : (
+                          <span key={idx}>
+                            ({obj.value}) {obj.name}
+                          </span>
+                        )
+                      ) : null
+                    )
+                    .filter(Boolean)
+                    .reduce(
+                      (acc, curr) => (acc === "" ? [curr] : [acc, " | ", curr]),
+                      ""
+                    )
                 : null}
             </button>
           </div>
@@ -504,9 +506,7 @@ const SingleVendor = ({ property }) => {
                         type=""
                         onClick={() =>
                           window.open(
-                            `https://wa.me/8804504504?text=Hi! I saw a property ${
-                            window.location.href
-                            } on BuilderFloor.com and i am interested in it. Is it available?`,
+                            `https://wa.me/9818215215?text=Hi! I saw a property ${window.location.href} on BuilderFloor.com and i am interested in it. Is it available?`,
                             "_blank"
                           )
                         }
@@ -1039,7 +1039,7 @@ const SingleVendor = ({ property }) => {
                       return (
                         <SwiperSlide key={index}>
                           <div
-                            className="swiper-item h-[400px] md:mt-[70px] mx-auto  lg:shrink-0 xl:shrink-0 2xl:shrink-0  w-[280px]  hover:scale-[1.05] cursor-pointer flex items-center justify-center relative bg-white rounded-[4px] mt-[50px]"
+                            className=" home-card-design swiper-item h-[400px] md:mt-[70px] mx-auto  lg:shrink-0 xl:shrink-0 2xl:shrink-0  w-[280px]  hover:scale-[1.05] cursor-pointer flex items-center justify-center relative bg-white rounded-[4px] mt-[50px]"
                             style={{
                               border: "1px solid #cacaca",
                             }}
@@ -1059,7 +1059,7 @@ const SingleVendor = ({ property }) => {
                                           src={
                                             property?.images?.length !== 0
                                               ? // ? `https://testerp1apis.nextsolutions.in/${property?.thumbnails?.[0]}`
-                                              property?.thumbnails?.[0]
+                                                property?.thumbnails?.[0]
                                               : "https://testerp1apis.nextsolutions.in/uploads/A329A-SL1/IMG_20221010_155607_00_merged.jpg"
                                           }
                                           alt="Product Image"
@@ -1070,7 +1070,7 @@ const SingleVendor = ({ property }) => {
                                       }
                                       {property &&
                                         property?.imageType ===
-                                        "360 DEGREE" && (
+                                          "360 DEGREE" && (
                                           <div className="absolute top-3 right-4 ">
                                             <img
                                               src="/assets/imgs/icons/360-degrees.png"
@@ -1082,12 +1082,12 @@ const SingleVendor = ({ property }) => {
                                     </a>
                                   </div>
                                 </Link>
-                                <div className="product-info px-2 pt-[10px] w-100">
+                                <div className=" home-card-title product-info px-2 pt-[10px] w-100">
                                   {/* <Link href={`/shop/${property?._id}`}> */}
                                   <Link href={hreff}>
                                     <a>
                                       <h3
-                                        className="text-body-lead color-gray-700  text-center"
+                                        className=" home-card-title text-body-lead color-gray-700  text-center"
                                         style={{ lineHeight: "25px" }}
                                       >
                                         {property?.title}
@@ -1152,10 +1152,10 @@ const SingleVendor = ({ property }) => {
                                           className="mt-1 px-3 py-2 font-medium bg-[#006D77] text-[#fff] rounded-lg"
                                         >{`₹
                                ${parseFloat(property?.price)
-                                            .toExponential()
-                                            .toString()
-                                            .split("e")[0]
-                                            .slice(0, 4)}
+                                 .toExponential()
+                                 .toString()
+                                 .split("e")[0]
+                                 .slice(0, 4)}
                                Cr.`}</button>
                                       </div>
                                     </div>
