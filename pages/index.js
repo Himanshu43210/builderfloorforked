@@ -1,5 +1,5 @@
 import "../styles/MaintenancePage.css";
-export default MaintenancePage = () => {
+export default function MaintenancePage() {
   return (
     <div className="vh">
       <div>
@@ -19,4 +19,4 @@ export default MaintenancePage = () => {
       </div>
     </div>
   );
-};
+}
