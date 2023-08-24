@@ -1,9 +1,9 @@
 import "../styles/MaintenancePage.css";
 export default MaintenancePage = () => {
   return (
-    <div class="vh">
+    <div className="vh">
       <div>
-        <div class="wrap">
+        <div className="wrap">
           <h1>Maintenance mode</h1>
           <h2>
             <p>
