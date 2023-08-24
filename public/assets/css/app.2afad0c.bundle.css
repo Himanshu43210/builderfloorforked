@@ -21882,10 +21882,6 @@ a {
   color: #2f2a4a;
 }
 
-.text-body-lead :hover {
-  text-decoration: underline;
-}
-
 .text-body-excerpt {
   font-family: "Noto Sans", sans-serif;
   font-weight: 400;

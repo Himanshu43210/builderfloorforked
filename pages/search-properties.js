@@ -101,7 +101,16 @@ const EachProperty = ({
             </div>
             <div className=" flex flex-col w-full ">
               <div className="pl-4 bg-[#d9d9d9] text-body-lead text-left border-b-2 border-solid border-[#777]  rounded-tr-lg flex py-2 justify-between align-center">
-                <h4>{propertyTitle}</h4>
+                <h4
+                  className="hover:underline cursor-pointer"
+                  onClick={() => {
+                    localStorage.setItem("backUrl", href);
+                    setLoading(true);
+                    router.push(hreff);
+                  }}
+                >
+                  {propertyTitle}
+                </h4>
                 <div className="flex pr-2 items-center ">
                   <div className="px-2 ">
                     <div
@@ -394,7 +403,7 @@ const EachProperty = ({
                   // setLoading(true);
                   // router.push(href);
                   // router.push(hreff);
-                  console.log(window.location.origin + hreff)
+                  console.log(window.location.origin + hreff);
                   window.open(window.location.origin + hreff, "_blank");
                 }}
                 className="cursor-pointer text-bold text-[#666]"
@@ -460,7 +469,8 @@ const ShareContainer = ({ setShow, url, image }) => {
           src={
             // deviceCheck
             //   ? `https://cdn.pannellum.org/2.5/pannellum.htm#panorama=${images[curr]}&autoLoad=true&autoRotate=-2&hfov=200`
-            `https://fascinating-queijadas-53a09a.netlify.app/?image=${image + "?not-from-cache-please"
+            `https://fascinating-queijadas-53a09a.netlify.app/?image=${
+              image + "?not-from-cache-please"
             }`
           }
           className="w-[100%] mb-[20px] md:h-[280px] h-[400px]"
@@ -573,14 +583,14 @@ function ShopGrid2(props) {
     const newProperties = props.properties;
     paginationData.length > 0
       ? setProperties(
-        paginationData.slice(
-          (pageNumber - 1) * 10,
-          (pageNumber - 1) * 10 + 10
+          paginationData.slice(
+            (pageNumber - 1) * 10,
+            (pageNumber - 1) * 10 + 10
+          )
         )
-      )
       : setProperties(
-        newProperties.slice((pageNumber - 1) * 10, (pageNumber - 1) * 10 + 10)
-      );
+          newProperties.slice((pageNumber - 1) * 10, (pageNumber - 1) * 10 + 10)
+        );
   }, [pageNumber]);
 
   const state = useSelector((state) => state.scroll.filters);
@@ -748,10 +758,10 @@ function ShopGrid2(props) {
                       propertyDesc={item.title ? item.title : "-"}
                       price={`₹
                                 ${parseFloat(item.price)
-                          .toExponential()
-                          .toString()
-                          .split("e")[0]
-                          .slice(0, 4)}
+                                  .toExponential()
+                                  .toString()
+                                  .split("e")[0]
+                                  .slice(0, 4)}
                                 Cr.`}
                       accommodation={item.accommodation[0]}
                       floor={getCapitalizeWords(item.floor)}

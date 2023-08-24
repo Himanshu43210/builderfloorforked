@@ -1039,7 +1039,7 @@ const SingleVendor = ({ property }) => {
                       return (
                         <SwiperSlide key={index}>
                           <div
-                            className=" swiper-item h-[400px] md:mt-[70px] mx-auto  lg:shrink-0 xl:shrink-0 2xl:shrink-0  w-[280px]  hover:scale-[1.05] cursor-pointer flex items-center justify-center relative bg-white rounded-[4px] mt-[50px]"
+                            className=" home-card-design swiper-item h-[400px] md:mt-[70px] mx-auto  lg:shrink-0 xl:shrink-0 2xl:shrink-0  w-[280px]  hover:scale-[1.05] cursor-pointer flex items-center justify-center relative bg-white rounded-[4px] mt-[50px]"
                             style={{
                               border: "1px solid #cacaca",
                             }}
@@ -1087,7 +1087,7 @@ const SingleVendor = ({ property }) => {
                                   <Link href={hreff}>
                                     <a>
                                       <h3
-                                        className=" text-body-lead color-gray-700  text-center"
+                                        className="hover:underline cursor-pointer text-body-lead color-gray-700  text-center"
                                         style={{ lineHeight: "25px" }}
                                       >
                                         {property?.title}
